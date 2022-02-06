@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="cz" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset= "/>">
+    <title>Seznam pojisteni</title>
+</head>
+<body>
+<h1>Seznam pojištění</h1>
+
+<table>
+   <tr>
+        <th>ID</th>
+        <th>Název</th>
+</tr>
+
+<tbody>
+    <tr th:each="pojisteni : ${pojisteni}">
+              <td th:text="${pojisteni.ID}">5</td>
+        <td th:text="${pojisteni.nazev}">životní pojištění</td>
+    </tr>
+</tbody>
+</table>
+
+</body>
+</html>
