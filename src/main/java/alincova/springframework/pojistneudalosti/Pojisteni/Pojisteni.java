@@ -1,8 +1,7 @@
-package alincova.springframework.Pojistne_udalosti.Pojisteni;
+package alincova.springframework.pojistneudalosti.Pojisteni;
 
 import javax.persistence.*;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.Set;
 import javax.persistence.Id;
 

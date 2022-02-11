@@ -1,10 +1,10 @@
-package alincova.springframework.Pojistne_udalosti.bootstrap;
+package alincova.springframework.pojistneudalosti.bootstrap;
 
 
-import alincova.springframework.Pojistne_udalosti.Pojisteni.Pojistenec;
-import alincova.springframework.Pojistne_udalosti.Pojisteni.Pojisteni;
-import alincova.springframework.Pojistne_udalosti.repositories.PojistenecRepository;
-import alincova.springframework.Pojistne_udalosti.repositories.PojisteniRepository;
+import alincova.springframework.pojistneudalosti.Pojisteni.Pojistenec;
+import alincova.springframework.pojistneudalosti.Pojisteni.Pojisteni;
+import alincova.springframework.pojistneudalosti.repositories.PojistenecRepository;
+import alincova.springframework.pojistneudalosti.repositories.PojisteniRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 

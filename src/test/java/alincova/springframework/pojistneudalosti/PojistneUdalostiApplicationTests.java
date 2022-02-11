@@ -1,4 +1,4 @@
-package alincova.springframework.Pojistne_udalosti;
+package alincova.springframework.pojistneudalosti;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

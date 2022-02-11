@@ -1,6 +1,6 @@
-package alincova.springframework.Pojistne_udalosti.controllers;
+package alincova.springframework.pojistneudalosti.controllers;
 
-import alincova.springframework.Pojistne_udalosti.repositories.PojistenecRepository;
+import alincova.springframework.pojistneudalosti.repositories.PojistenecRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

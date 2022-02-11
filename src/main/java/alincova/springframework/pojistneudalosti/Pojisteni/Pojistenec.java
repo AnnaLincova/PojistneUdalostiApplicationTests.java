@@ -1,6 +1,4 @@
-package alincova.springframework.Pojistne_udalosti.Pojisteni;
-
-import org.springframework.beans.factory.annotation.Autowired;
+package alincova.springframework.pojistneudalosti.Pojisteni;
 
 import javax.persistence.*;
 import java.util.HashSet;
