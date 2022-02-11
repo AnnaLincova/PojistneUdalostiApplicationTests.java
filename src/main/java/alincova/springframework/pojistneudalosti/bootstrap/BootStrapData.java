@@ -28,7 +28,7 @@ public class BootStrapData implements CommandLineRunner {
         Pojistenec patrik = new Pojistenec("Patrik", "Novotný", 39);
         Pojisteni zivotni = new Pojisteni("životní");
         patrik.getPojisteni().add(zivotni);
-        zivotni.getPojistenci().add(patrik);
+        zivotni.setPojistenec(patrik);
 
 
         pojistenecRepository.save(patrik);
@@ -42,7 +42,7 @@ public class BootStrapData implements CommandLineRunner {
         pojisteniRepository.save(pojisteniVozidla);
 
         eva.getPojisteni().add(pojisteniVozidla);
-        pojisteniVozidla.getPojistenci().add(eva);
+        pojisteniVozidla.setPojistenec(eva);
 
         System.out.println("Celkový počet pojištěnců:" + pojistenecRepository.count());
 
