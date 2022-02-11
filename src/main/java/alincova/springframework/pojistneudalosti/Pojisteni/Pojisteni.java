@@ -9,12 +9,12 @@ import javax.persistence.Id;
 @Entity
 public class Pojisteni {
 
-    private String nazev;
+    private String name;
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long ID;
+    private Long id;
 
     @ManyToMany
     @JoinTable(name = "pojistenec_pojisteni", joinColumns = @JoinColumn(name = "pojisteni_ID"),
@@ -25,25 +25,25 @@ public class Pojisteni {
     public Pojisteni() {
     }
 
-    public Pojisteni(String nazev) {
-        this.nazev = nazev;
+    public Pojisteni(String name) {
+        this.name = name;
     }
 
 
-    public Long getID() {
-        return ID;
+    public Long getId() {
+        return id;
     }
 
-    public void setID(Long ID) {
-        this.ID = ID;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getNazev() {
-        return nazev;
+    public String getName() {
+        return name;
     }
 
-    public void setNazev(String nazev) {
-        this.nazev = nazev;
+    public void setName(String name) {
+        this.name = name;
     }
 
 
@@ -55,28 +55,6 @@ public class Pojisteni {
         this.pojistenci = pojistenci;
     }
 
-    @Override
-    public String toString() {
-        return "Pojisteni{" +
-                "nazev='" + nazev + '\'' +
-                ", ID=" + ID +
-                ", pojistenci=" + pojistenci +
-                '}';
-    }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Pojisteni pojisteni = (Pojisteni) o;
-
-        return ID != null ? ID.equals(pojisteni.ID) : pojisteni.ID == null;
-    }
-
-    @Override
-    public int hashCode() {
-        return ID != null ? ID.hashCode() : 0;
-    }
 }
 
