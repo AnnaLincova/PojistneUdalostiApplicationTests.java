@@ -16,10 +16,9 @@ public class Pojisteni {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @ManyToMany
-    @JoinTable(name = "pojistenec_pojisteni", joinColumns = @JoinColumn(name = "pojisteni_ID"),
-            inverseJoinColumns = @JoinColumn(name = "pojistenec_ID"))
-    private Set<Pojistenec> pojistenci = new HashSet<>();
+    @ManyToOne
+    @JoinTable(name = "pojistenec_id")
+    private Pojistenec pojistenec;
 
 
     public Pojisteni() {
@@ -46,15 +45,12 @@ public class Pojisteni {
         this.name = name;
     }
 
-
-    public Set<Pojistenec> getPojistenci() {
-        return pojistenci;
+    public Pojistenec getPojistenec() {
+        return pojistenec;
     }
 
-    public void setPojistenci(Set<Pojistenec> pojistenci) {
-        this.pojistenci = pojistenci;
+    public void setPojistenec(Pojistenec pojistenec) {
+        this.pojistenec = pojistenec;
     }
-
-
 }
 

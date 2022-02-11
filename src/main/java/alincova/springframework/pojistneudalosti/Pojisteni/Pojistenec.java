@@ -17,7 +17,7 @@ public class Pojistenec {
     private int age;
 
 
-    @ManyToMany(mappedBy = "pojistenci")
+    @OneToMany(mappedBy = "pojistenec")
     private Set<Pojisteni> pojisteni = new HashSet<>();
 
     public Pojistenec() {
