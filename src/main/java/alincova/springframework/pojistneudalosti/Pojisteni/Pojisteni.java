@@ -1,16 +1,11 @@
 package alincova.springframework.pojistneudalosti.Pojisteni;
 
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
-import javax.persistence.Id;
-
 
 @Entity
 public class Pojisteni {
 
     private String name;
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,14 +15,12 @@ public class Pojisteni {
     @JoinTable(name = "pojistenec_id")
     private Pojistenec pojistenec;
 
-
     public Pojisteni() {
     }
 
     public Pojisteni(String name) {
         this.name = name;
     }
-
 
     public Long getId() {
         return id;

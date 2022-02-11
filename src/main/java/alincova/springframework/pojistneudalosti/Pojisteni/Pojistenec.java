@@ -16,7 +16,6 @@ public class Pojistenec {
     private String surname;
     private int age;
 
-
     @OneToMany(mappedBy = "pojistenec")
     private Set<Pojisteni> pojisteni = new HashSet<>();
 
@@ -28,7 +27,6 @@ public class Pojistenec {
         this.surname = surname;
         this.age = age;
     }
-
 
     public Long getId() {
         return id;
@@ -69,6 +67,4 @@ public class Pojistenec {
     public void setPojisteni(Set<Pojisteni> pojisteni) {
         this.pojisteni = pojisteni;
     }
-
-
 }
