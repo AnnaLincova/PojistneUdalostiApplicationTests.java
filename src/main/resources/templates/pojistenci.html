@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="cz" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset= "/>">
+    <title>Seznam pojistencu</title>
+</head>
+<body>
+<h1>Seznam pojištěnců</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Jméno</th>
+        <th>Příjmení</th>
+        <th>Věk</th>
+
+    </tr>
+
+    <tbody>
+    <tr th:each="pojistenec : ${pojistenci}">
+        <td th:text="${pojistenec.id}">2</td>
+        <td th:text="${pojistenec.name}">Pavel</td>
+        <td th:text="${pojistenec.surname}">Pospíšil</td>
+        <td th:text="${pojistenec.age}">29</td>
+
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
