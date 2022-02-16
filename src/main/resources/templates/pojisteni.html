@@ -9,18 +9,17 @@
 <h1>Seznam pojištění</h1>
 
 <table>
-   <tr>
+    <tr>
         <th>ID</th>
         <th>Název</th>
-</tr>
+    </tr>
 
-<tbody>
+    <tbody>
     <tr th:each="pojisteni : ${pojisteni}">
-              <td th:text="${pojisteni.id}">5</td>
-        <!--/*@thymesVar id="name" type="name"*/-->
+        <td th:text="${pojisteni.id}">5</td>
         <td th:text="${pojisteni.name}">životní pojištění</td>
-            </tr>
-</tbody>
+    </tr>
+    </tbody>
 </table>
 
 </body>
