@@ -64,6 +64,18 @@ public class Pojistenec {
         return pojisteni;
     }
 
+    public String getPojisteniName() {
+        StringBuilder sb = new StringBuilder();
+        pojisteni.forEach(poj ->
+        {
+            if (!sb.isEmpty()) {
+                sb.append(", ");
+            }
+            sb.append(poj.getName());
+        });
+        return sb.toString();
+    }
+
     public void setPojisteni(Set<Pojisteni> pojisteni) {
         this.pojisteni = pojisteni;
     }
