@@ -1,5 +1,6 @@
 package alincova.springframework.pojistneudalosti.bootstrap;
 
+
 import alincova.springframework.pojistneudalosti.Pojisteni.Pojistenec;
 import alincova.springframework.pojistneudalosti.Pojisteni.Pojisteni;
 import alincova.springframework.pojistneudalosti.repositories.PojistenecRepository;
@@ -23,20 +24,21 @@ public class BootStrapData implements CommandLineRunner {
 
         Pojistenec patrik = new Pojistenec("Patrik", "Novotný", 39);
         Pojisteni zivotni = new Pojisteni("životní");
+        Pojisteni pojisteniVozidla = new Pojisteni("pojištění vozidla");
         patrik.getPojisteni().add(zivotni);
+        patrik.getPojisteni().add(pojisteniVozidla);
         zivotni.setPojistenec(patrik);
+        pojisteniVozidla.setPojistenec(patrik);
 
         pojistenecRepository.save(patrik);
         pojisteniRepository.save(zivotni);
 
         Pojistenec eva = new Pojistenec("Eva", "Adamcová", 30);
-        Pojisteni pojisteniVozidla = new Pojisteni("pojištění vozidla");
+        eva.getPojisteni().add(pojisteniVozidla);
+        //pojisteniVozidla.setPojistenec(eva);
 
         pojistenecRepository.save(eva);
         pojisteniRepository.save(pojisteniVozidla);
-
-        eva.getPojisteni().add(pojisteniVozidla);
-        pojisteniVozidla.setPojistenec(eva);
 
         System.out.println("Celkový počet pojištěnců:" + pojistenecRepository.count());
     }

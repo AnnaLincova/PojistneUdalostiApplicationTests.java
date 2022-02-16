@@ -14,7 +14,7 @@
         <th>Jméno</th>
         <th>Příjmení</th>
         <th>Věk</th>
-
+        <th>Pojištění</th>
     </tr>
 
     <tbody>
@@ -23,9 +23,17 @@
         <td th:text="${pojistenec.name}">Pavel</td>
         <td th:text="${pojistenec.surname}">Pospíšil</td>
         <td th:text="${pojistenec.age}">29</td>
+        <td th:text="${pojistenec.getPojisteniName()}">29</td>
 
     </tr>
     </tbody>
 </table>
+
+<a href="/novypojistenec">
+    <button>
+        Nový pojištěnec
+    </button>
+</a>
+
 </body>
 </html>
