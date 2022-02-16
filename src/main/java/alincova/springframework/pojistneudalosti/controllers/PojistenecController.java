@@ -16,20 +16,20 @@ public class PojistenecController {
     }
 
     @RequestMapping(value = "/pojistenci", method = RequestMethod.GET)
-    public void getPojistenci(Model model){
+    public String getPojistenci(Model model){
         model.addAttribute("pojistenci", pojistenecRepository.findAll());
-
+        return "pojistenci";
     }
 
     @GetMapping("/novypojistenec")
-    public void novyPojistenec(Model model) {
+    public String novyPojistenec(Model model) {
         model.addAttribute("novypojistenec", new Pojistenec());
-           }
-
+        return "novypojistenec";
+    }
     @PostMapping("/novypojistenec")
-    public String addPojistenec(@ModelAttribute Pojistenec novypojistenec, Model model){
+    public String addPojistenec(@ModelAttribute Pojistenec novypojistenec){
         pojistenecRepository.save(novypojistenec);
-        model.addAttribute("pojistenci", pojistenecRepository.findAll());
+        pojistenecRepository.findAll();
         return "pojistenci";
     }
 
