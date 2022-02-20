@@ -3,20 +3,27 @@ package alincova.springframework.pojistneudalosti.bootstrap;
 
 import alincova.springframework.pojistneudalosti.Pojisteni.Pojistenec;
 import alincova.springframework.pojistneudalosti.Pojisteni.Pojisteni;
+import alincova.springframework.pojistneudalosti.Pojisteni.Smlouva;
 import alincova.springframework.pojistneudalosti.repositories.PojistenecRepository;
 import alincova.springframework.pojistneudalosti.repositories.PojisteniRepository;
+import alincova.springframework.pojistneudalosti.repositories.SmlouvaRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.Instant;
+import java.time.LocalDate;
 
 @Component
 public class BootStrapData implements CommandLineRunner {
 
     private final PojistenecRepository pojistenecRepository;
     private final PojisteniRepository pojisteniRepository;
+    private final SmlouvaRepository smlouvaRepository;
 
-    public BootStrapData(PojistenecRepository pojistenecRepository, PojisteniRepository pojisteniRepository) {
+    public BootStrapData(PojistenecRepository pojistenecRepository, PojisteniRepository pojisteniRepository, SmlouvaRepository smlouvaRepository) {
         this.pojistenecRepository = pojistenecRepository;
         this.pojisteniRepository = pojisteniRepository;
+        this.smlouvaRepository = smlouvaRepository;
     }
 
     @Override
@@ -30,6 +37,12 @@ public class BootStrapData implements CommandLineRunner {
         zivotni.setPojistenec(patrik);
         pojisteniVozidla.setPojistenec(patrik);
 
+        Smlouva zivotni1 = new Smlouva();
+        patrik.getSmlouva().add(zivotni1);
+        zivotni.setSmlouva(zivotni1);
+        smlouvaRepository.save(zivotni1);
+
+
         pojistenecRepository.save(patrik);
         pojisteniRepository.save(zivotni);
 
@@ -41,5 +54,6 @@ public class BootStrapData implements CommandLineRunner {
         pojisteniRepository.save(pojisteniVozidla);
 
         System.out.println("Celkový počet pojištěnců:" + pojistenecRepository.count());
+        System.out.println("Celkový počet smluv:" + smlouvaRepository.count());
     }
 }

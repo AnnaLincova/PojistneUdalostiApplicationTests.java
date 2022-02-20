@@ -19,6 +19,9 @@ public class Pojistenec {
     @OneToMany(mappedBy = "pojistenec")
     private Set<Pojisteni> pojisteni = new HashSet<>();
 
+    @OneToMany(mappedBy = "pojistenec")
+    private Set<Smlouva> smlouva = new HashSet<>();
+
     public Pojistenec() {
     }
 
@@ -74,6 +77,14 @@ public class Pojistenec {
             sb.append(poj.getName());
         });
         return sb.toString();
+    }
+
+    public Set<Smlouva> getSmlouva() {
+        return smlouva;
+    }
+
+    public void setSmlouva(Set<Smlouva> smlouva) {
+        this.smlouva = smlouva;
     }
 
     public void setPojisteni(Set<Pojisteni> pojisteni) {

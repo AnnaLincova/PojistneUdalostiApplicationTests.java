@@ -15,6 +15,9 @@ public class Pojisteni {
     @JoinTable(name = "pojistenec_id")
     private Pojistenec pojistenec;
 
+    @OneToOne(mappedBy = "pojisteni")
+    private Smlouva smlouva;
+
     public Pojisteni() {
     }
 
@@ -44,6 +47,14 @@ public class Pojisteni {
 
     public void setPojistenec(Pojistenec pojistenec) {
         this.pojistenec = pojistenec;
+    }
+
+    public Smlouva getSmlouva() {
+        return smlouva;
+    }
+
+    public void setSmlouva(Smlouva smlouva) {
+        this.smlouva = smlouva;
     }
 }
 
