@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="cz" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nová smlouva</title>
+</head>
+<body>
+<h2>Sjednání nové smlouvy</h2>
+<form method="post">
+    <label for="dateOfConclusion">Zadejte datum uzávření smlouvy:</label><br/>
+    <input id="dateOfConclusion" min="2022-01-01" name="dateOfConclusion" size="22" type="date"><br/>
+    <label for="dateOfExpiration">Zadejte datum ukončení smlouvy:</label><br/>
+    <input id="dateOfExpiration" min="2022-01-01" name="dateOfExpiration" size="22" type="date"><br/>
+
+    <select name="pojisteni" th:each="pojisteni : ${pojisteni}">
+        <option value="ZIVOTNI">Životní</option>
+        <option value="VOZIDLA">Pojištění vozidla</option>
+        <option selected="selected" value="NEMOVITOSTI">Pojištění nemovitosti</option>
+        <option value="CESTOVNI">Cestovní pojištění</option>
+    </select>
+    <br/><br/>
+    <input formmethod="POST" type="submit" value="Uzavřit smlouvu"/>
+</form>
+
+</body>
+</html>

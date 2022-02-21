@@ -1,0 +1,4 @@
+TypPojisteni.ZIVOTNI=životní en
+TypPojisteni.VOZIDLA=vozidla en
+TypPojisteni.CESTOVNI=cestovní en
+TypPojisteni.NEMOVITOSTI=nemovitosti en

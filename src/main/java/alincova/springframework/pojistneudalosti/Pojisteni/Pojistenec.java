@@ -67,6 +67,10 @@ public class Pojistenec {
         return pojisteni;
     }
 
+    public void setPojisteni(Set<Pojisteni> pojisteni) {
+        this.pojisteni = pojisteni;
+    }
+
     public String getPojisteniName() {
         StringBuilder sb = new StringBuilder();
         pojisteni.forEach(poj ->
@@ -74,7 +78,7 @@ public class Pojistenec {
             if (!sb.isEmpty()) {
                 sb.append(", ");
             }
-            sb.append(poj.getName());
+            sb.append(poj.getType());
         });
         return sb.toString();
     }
@@ -85,9 +89,5 @@ public class Pojistenec {
 
     public void setSmlouva(Set<Smlouva> smlouva) {
         this.smlouva = smlouva;
-    }
-
-    public void setPojisteni(Set<Pojisteni> pojisteni) {
-        this.pojisteni = pojisteni;
     }
 }

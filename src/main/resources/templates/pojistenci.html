@@ -2,7 +2,7 @@
 <html lang="cz" xmlns:th="https://www.thymeleaf.org">
 
 <head>
-    <meta charset= "/>">
+    <meta charset="UTF-8">
     <title>Seznam pojistencu</title>
 </head>
 <body>
@@ -15,7 +15,7 @@
         <th>Příjmení</th>
         <th>Věk</th>
         <th>Pojištění</th>
-        <th>Smlouva</th>
+
     </tr>
 
     <tbody>
@@ -24,12 +24,11 @@
         <td th:text="${pojistenec.name}">Pavel</td>
         <td th:text="${pojistenec.surname}">Pospíšil</td>
         <td th:text="${pojistenec.age}">29</td>
-        <td th:text="${pojistenec.getPojisteniName()}">29</td>
-        <td th:text="${pojistenec.getSmlouva()}">3</td>
-
+        <td th:text="${pojistenec.getPojisteni()}">
     </tr>
     </tbody>
 </table>
+
 
 <a href="/novypojistenec">
     <button>
