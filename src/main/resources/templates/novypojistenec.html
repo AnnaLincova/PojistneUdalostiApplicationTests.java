@@ -1,18 +1,28 @@
 <!DOCTYPE html>
-<html lang="cz" xmlns:th="https://www.thymeleaf.org">
+<html lang="cz">
+
 <head>
-  <title>novypojistenec</title>
+    <meta charset="UTF-8">
+    <title>novypojistenec</title>
 </head>
 <body>
 <h2>Nový pojištěnec</h2>
 <form method="post">
-  <label for="name">Jméno:</label><br/>
-  <input type="text" id="name" name="name" size="22" placeholder="Zadejte jméno"/><br/>
-  <label for="surname">Přijmení:</label><br/>
-  <input type="text" id="surname" name="surname" size="22" placeholder="Zadejte příjmení"/><br/>
-  <label for="age">Věk:</label><br/>
-  <input type="text" id="age" name="age" size="22" placeholder="Zadejte počet plných let"/><br/>
-  <input type="submit" formmethod="POST" value="Registrovat"/>
+    <label for="name">Jméno:</label><br/>
+    <input id="name" name="name" placeholder="Zadejte jméno" size="22" type="text"/><br/>
+    <label for="surname">Přijmení:</label><br/>
+    <input id="surname" name="surname" placeholder="Zadejte příjmení" size="22" type="text"/><br/>
+    <label for="age">Věk:</label><br/>
+    <input id="age" name="age" placeholder="Zadejte počet plných let" size="22" type="text"/><br/>
+    <br/>
+
+    <a href="/novasmlouva">
+        <button>
+            Sjednat smlouvu
+        </button>
+    </a>
+
+    <input formmethod="POST" type="submit" value="Registrovat"/>
 </form>
 
 </body>

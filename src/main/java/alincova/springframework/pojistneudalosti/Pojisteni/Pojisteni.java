@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 public class Pojisteni {
 
-    private String name;
+    private TypPojisteni type;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,11 +18,20 @@ public class Pojisteni {
     @OneToOne(mappedBy = "pojisteni")
     private Smlouva smlouva;
 
-    public Pojisteni() {
+    public Pojisteni(TypPojisteni type) {
+        this.type = type;
     }
 
-    public Pojisteni(String name) {
-        this.name = name;
+    public Pojisteni() {
+
+    }
+
+    public TypPojisteni getType() {
+        return type;
+    }
+
+    public void setType(TypPojisteni type) {
+        this.type = type;
     }
 
     public Long getId() {
@@ -31,14 +40,6 @@ public class Pojisteni {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public Pojistenec getPojistenec() {

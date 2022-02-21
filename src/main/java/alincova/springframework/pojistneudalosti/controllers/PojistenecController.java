@@ -1,11 +1,11 @@
 package alincova.springframework.pojistneudalosti.controllers;
 
 import alincova.springframework.pojistneudalosti.Pojisteni.Pojistenec;
+import alincova.springframework.pojistneudalosti.Pojisteni.Smlouva;
 import alincova.springframework.pojistneudalosti.repositories.PojistenecRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.thymeleaf.model.IModel;
 
 @Controller
 public class PojistenecController {
@@ -16,20 +16,19 @@ public class PojistenecController {
     }
 
     @RequestMapping(value = "/pojistenci", method = RequestMethod.GET)
-    public String getPojistenci(Model model){
+    public void getPojistenci(Model model){
         model.addAttribute("pojistenci", pojistenecRepository.findAll());
-        return "pojistenci";
-    }
+            }
 
     @GetMapping("/novypojistenec")
-    public String novyPojistenec(Model model) {
+    public void novyPojistenec(Model model) {
         model.addAttribute("novypojistenec", new Pojistenec());
-        return "novypojistenec";
-    }
+         }
+
     @PostMapping("/novypojistenec")
-    public String addPojistenec(@ModelAttribute Pojistenec novypojistenec){
+    public String addPojistenec(@ModelAttribute Pojistenec novypojistenec, Model model){
         pojistenecRepository.save(novypojistenec);
-        pojistenecRepository.findAll();
+        model.addAttribute("pojistenci", pojistenecRepository.findAll());
         return "pojistenci";
     }
 
