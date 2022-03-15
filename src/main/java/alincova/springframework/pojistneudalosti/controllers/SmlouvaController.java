@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.time.Instant;
 import java.time.LocalDate;
 
 @Controller
@@ -29,15 +30,14 @@ public class SmlouvaController {
     @GetMapping("/novasmlouva")
     public void novaSmlouva(Model model) {
         model.addAttribute("novasmlouva", new Smlouva());
-        System.out.println(model.getAttribute("pojisteni"));
         model.addAttribute("pojisteni", new Pojisteni(TypPojisteni.ZIVOTNI));
     }
 
     @PostMapping("/novasmlouva")
-    public String addSmlouva(@ModelAttribute LocalDate dateOfConclusion, @ModelAttribute LocalDate dateOfExpiration,
+    public String addSmlouva(//@ModelAttribute Instant dateOfConclusion, @ModelAttribute Instant dateOfExpiration,
                              Model model) {
-        //novasmlouva.setPojisteni(pojisteni);
+        //novasmlouva.setPojisteniName(pojisteni);
         //smlouvaRepository.save(novasmlouva);
-        return "novypojistenec";
+        return "pojistenci";
     }
 }

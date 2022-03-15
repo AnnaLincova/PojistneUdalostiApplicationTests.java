@@ -1,6 +1,7 @@
 package alincova.springframework.pojistneudalosti.Pojisteni;
 
 import javax.persistence.*;
+import java.time.Instant;
 import java.time.LocalDate;
 
 @Entity
@@ -9,8 +10,8 @@ public class Smlouva {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private LocalDate dateOfConclusion;
-    private LocalDate dateOfExpiration;
+    private Instant dateOfConclusion;
+    private Instant dateOfExpiration;
 
     @ManyToOne
     @JoinTable(name = "pojistenec_id")
@@ -24,8 +25,8 @@ public class Smlouva {
     }
 
     public Smlouva(String dateOfConclusion, String dateOfExpiration) {
-        this.dateOfConclusion = LocalDate.parse(dateOfConclusion);
-        this.dateOfExpiration = LocalDate.parse(dateOfExpiration);
+        this.dateOfConclusion = Instant.parse(dateOfConclusion);
+        this.dateOfExpiration = Instant.parse(dateOfExpiration);
     }
 
     public Long getId() {
@@ -36,19 +37,19 @@ public class Smlouva {
         this.id = id;
     }
 
-    public LocalDate getDateOfConclusion() {
+    public Instant getDateOfConclusion() {
         return dateOfConclusion;
     }
 
-    public void setDateOfConclusion(LocalDate dateOfConclusion) {
+    public void setDateOfConclusion(Instant dateOfConclusion) {
         this.dateOfConclusion = dateOfConclusion;
     }
 
-    public LocalDate getDateOfExpiration() {
+    public Instant getDateOfExpiration() {
         return dateOfExpiration;
     }
 
-    public void setDateOfExpiration(LocalDate dateOfExpiration) {
+    public void setDateOfExpiration(Instant dateOfExpiration) {
         this.dateOfExpiration = dateOfExpiration;
     }
 
