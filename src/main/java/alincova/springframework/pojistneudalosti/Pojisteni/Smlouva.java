@@ -2,7 +2,6 @@ package alincova.springframework.pojistneudalosti.Pojisteni;
 
 import javax.persistence.*;
 import java.time.Instant;
-import java.time.LocalDate;
 
 @Entity
 public class Smlouva {
