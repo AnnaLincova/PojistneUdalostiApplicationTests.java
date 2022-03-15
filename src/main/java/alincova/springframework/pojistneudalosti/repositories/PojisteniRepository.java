@@ -6,6 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PojisteniRepository extends CrudRepository<Pojisteni, Long> {
-
-};
+}
 
