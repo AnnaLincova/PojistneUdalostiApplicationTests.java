@@ -4,7 +4,6 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@SuppressWarnings("ALL")
 @Entity
 public class Pojistenec {
 
@@ -16,7 +15,8 @@ public class Pojistenec {
     private String surname;
     private int age;
 
-    @OneToMany(mappedBy = "pojistenec")
+    @OneToMany
+    @JoinColumn(name = "pojistenec_id")
     private Set<Smlouva> smlouvy = new HashSet<>();
 
     public Pojistenec() {

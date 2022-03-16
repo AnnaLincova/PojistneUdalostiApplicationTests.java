@@ -31,7 +31,6 @@ public class BootStrapData implements CommandLineRunner {
         Smlouva zivotni = new Smlouva(Instant.parse("2022-03-16T10:00:00Z"), Instant.parse("2023-03-16T10:00:00Z"), ZIVOTNI);
         patrik.getSmlouvy().add(zivotni);
         smlouvaRepository.save(zivotni);
-
         pojistenecRepository.save(patrik);
 
         Pojistenec eva = new Pojistenec("Eva", "Adamcová", 30);

@@ -21,11 +21,9 @@ public class Smlouva {
     }
 
     public Smlouva(Instant dateOfConclusion, Instant dateOfExpiration, TypPojisteni type) {
-        this.id = id;
         this.dateOfConclusion = dateOfConclusion;
         this.dateOfExpiration = dateOfExpiration;
         this.type = type;
-        this.pojistenec = pojistenec;
     }
 
     public Long getId() {
