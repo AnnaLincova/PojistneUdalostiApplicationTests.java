@@ -10,7 +10,6 @@
     <tr>
         <th>ID</th>
         <th>Datum uzávření smlouvy</th>
-        <th>Datum uzávření smlouvy</th>
         <th>Datum ukončení smlouvy</th>
         <th>Pojištění</th>
     </tr>
@@ -21,7 +20,7 @@
         <td th:text="${smlouva.id}">5</td>
         <td th:text="${smlouva.dateOfConclusion}">5</td>
         <td th:text="${smlouva.dateOfExpiration}">5</td>
-        <td th:text="${smlouva.pojisteni.getPojisteniName()}">5</td>
+        <td th:text="${smlouva.type}">5</td>
     </tr>
     <br/><br/>
     <a href="/index">

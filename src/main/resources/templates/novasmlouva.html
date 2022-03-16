@@ -12,7 +12,8 @@
     <label for="dateOfExpiration">Zadejte datum ukončení smlouvy:</label><br/>
     <input id="dateOfExpiration" min="2022-01-01" name="dateOfExpiration" size="22" type="date"><br/>
 
-        <select name="pojisteni" th:each="typ : ${pojisteni.getType()}">
+        <!--/*@thymesVar id="smlouva" type="alincova"*/-->
+        <select name="pojisteni" th:each="typ : ${smlouva.getType()}">
         <option value="ZIVOTNI">Životní</option>
         <option value="VOZIDLA">Pojištění vozidla</option>
         <option selected="selected" value="NEMOVITOSTI">Pojištění nemovitosti</option>

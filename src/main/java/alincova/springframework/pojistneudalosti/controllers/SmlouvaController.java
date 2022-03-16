@@ -1,7 +1,6 @@
 package alincova.springframework.pojistneudalosti.controllers;
 
 import alincova.springframework.pojistneudalosti.Pojisteni.Smlouva;
-import alincova.springframework.pojistneudalosti.Pojisteni.TypPojisteni;
 import alincova.springframework.pojistneudalosti.repositories.PojistenecRepository;
 import alincova.springframework.pojistneudalosti.repositories.SmlouvaRepository;
 import org.springframework.stereotype.Controller;
@@ -17,14 +16,12 @@ public class SmlouvaController {
 
     public SmlouvaController(SmlouvaRepository smlouvaRepository, PojistenecRepository pojistenecRepository) {
         this.smlouvaRepository = smlouvaRepository;
-
         this.pojistenecRepository = pojistenecRepository;
     }
 
     @GetMapping("/novasmlouva")
     public void novaSmlouva(Model model) {
         model.addAttribute("novasmlouva", new Smlouva());
-
     }
 
     @PostMapping("/novasmlouva")
@@ -32,7 +29,7 @@ public class SmlouvaController {
     //smlouvaRepository.save(novasmlouva);
     //return "pojistenci";}
 
-    @GetMapping(value = "/smlouvy")
+    @GetMapping("/smlouvy")
     public String getSmlouva(Model model) {
         model.addAttribute("smlouvy", smlouvaRepository.findAll());
         return "smlouvy";

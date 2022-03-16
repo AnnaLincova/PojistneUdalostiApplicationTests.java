@@ -61,14 +61,14 @@ public class Pojistenec {
     }
 
 
-    public String getPojisteniName() {
+    public String getSmlouvyTypes() {
         StringBuilder sb = new StringBuilder();
-        smlouvy.forEach(poj ->
+        smlouvy.forEach(smlouva ->
         {
             if (!sb.isEmpty()) {
                 sb.append(", ");
             }
-            sb.append(poj.getType());
+            sb.append(smlouva.getType());
         });
         return sb.toString();
     }
