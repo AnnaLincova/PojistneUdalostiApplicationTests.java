@@ -11,21 +11,21 @@ public class Smlouva {
 
     private Instant dateOfConclusion;
     private Instant dateOfExpiration;
+    private TypPojisteni type;
 
     @ManyToOne
     @JoinTable(name = "pojistenec_id")
     private Pojistenec pojistenec;
 
-    @OneToOne
-    @JoinTable(name = "pojisteni_id")
-    private Pojisteni pojisteni;
-
     public Smlouva() {
     }
 
-    public Smlouva(String dateOfConclusion, String dateOfExpiration) {
-        this.dateOfConclusion = Instant.parse(dateOfConclusion);
-        this.dateOfExpiration = Instant.parse(dateOfExpiration);
+    public Smlouva(Instant dateOfConclusion, Instant dateOfExpiration, TypPojisteni type) {
+        this.id = id;
+        this.dateOfConclusion = dateOfConclusion;
+        this.dateOfExpiration = dateOfExpiration;
+        this.type = type;
+        this.pojistenec = pojistenec;
     }
 
     public Long getId() {
@@ -52,19 +52,19 @@ public class Smlouva {
         this.dateOfExpiration = dateOfExpiration;
     }
 
+    public TypPojisteni getType() {
+        return type;
+    }
+
+    public void setType(TypPojisteni type) {
+        this.type = type;
+    }
+
     public Pojistenec getPojistenec() {
         return pojistenec;
     }
 
     public void setPojistenec(Pojistenec pojistenec) {
         this.pojistenec = pojistenec;
-    }
-
-    public Pojisteni getPojisteni() {
-        return pojisteni;
-    }
-
-    public void setPojisteni(Pojisteni pojisteni) {
-        this.pojisteni = pojisteni;
     }
 }

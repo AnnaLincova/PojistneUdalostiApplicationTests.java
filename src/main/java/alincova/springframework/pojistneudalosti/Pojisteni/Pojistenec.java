@@ -17,10 +17,7 @@ public class Pojistenec {
     private int age;
 
     @OneToMany(mappedBy = "pojistenec")
-    private Set<Pojisteni> pojisteni = new HashSet<>();
-
-    @OneToMany(mappedBy = "pojistenec")
-    private Set<Smlouva> smlouva = new HashSet<>();
+    private Set<Smlouva> smlouvy = new HashSet<>();
 
     public Pojistenec() {
     }
@@ -63,17 +60,10 @@ public class Pojistenec {
         this.age = age;
     }
 
-    public Set<Pojisteni> getPojisteni() {
-        return pojisteni;
-    }
-
-    public void setPojisteni(Set<Pojisteni> pojisteni) {
-        this.pojisteni = pojisteni;
-    }
 
     public String getPojisteniName() {
         StringBuilder sb = new StringBuilder();
-        pojisteni.forEach(poj ->
+        smlouvy.forEach(poj ->
         {
             if (!sb.isEmpty()) {
                 sb.append(", ");
@@ -83,11 +73,11 @@ public class Pojistenec {
         return sb.toString();
     }
 
-    public Set<Smlouva> getSmlouva() {
-        return smlouva;
+    public Set<Smlouva> getSmlouvy() {
+        return smlouvy;
     }
 
-    public void setSmlouva(Set<Smlouva> smlouva) {
-        this.smlouva = smlouva;
+    public void setSmlouvy(Set<Smlouva> smlouvy) {
+        this.smlouvy = smlouvy;
     }
 }
