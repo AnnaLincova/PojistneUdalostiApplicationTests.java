@@ -8,11 +8,11 @@
 <h2>Sjednání nové smlouvy</h2>
 <form method="post">
     <label for="dateOfConclusion">Zadejte datum uzávření smlouvy:</label><br/>
-    <input id="dateOfConclusion" min="2022-01-01" name="dateOfConclusion" size="22" type="datetime-local"><br/>
+    <input id="dateOfConclusion" min="2022-01-01" name="dateOfConclusion" size="22" type="date"><br/>
     <label for="dateOfExpiration">Zadejte datum ukončení smlouvy:</label><br/>
-    <input id="dateOfExpiration" min="2022-01-01" name="dateOfExpiration" size="22" type="datetime-local"><br/>
+    <input id="dateOfExpiration" min="2022-01-01" name="dateOfExpiration" size="22" type="date"><br/>
 
-    <select name="pojisteni" th:each="pojisteni : ${pojisteni}">
+        <select name="pojisteni" th:each="typ : ${pojisteni.getType()}">
         <option value="ZIVOTNI">Životní</option>
         <option value="VOZIDLA">Pojištění vozidla</option>
         <option selected="selected" value="NEMOVITOSTI">Pojištění nemovitosti</option>

@@ -9,11 +9,7 @@ import alincova.springframework.pojistneudalosti.repositories.SmlouvaRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import java.time.Instant;
-import java.time.LocalDate;
 
 @Controller
 public class SmlouvaController {
@@ -34,10 +30,15 @@ public class SmlouvaController {
     }
 
     @PostMapping("/novasmlouva")
-    public String addSmlouva(//@ModelAttribute Instant dateOfConclusion, @ModelAttribute Instant dateOfExpiration,
-                             Model model) {
-        //novasmlouva.setPojisteniName(pojisteni);
-        //smlouvaRepository.save(novasmlouva);
-        return "pojistenci";
+    //public String addSmlouva(@ModelAttribute Smlouva novasmlouva, Model model) {
+    //smlouvaRepository.save(novasmlouva);
+    //return "pojistenci";}
+
+    @GetMapping(value = "/smlouvy")
+    public String getSmlouva(Model model) {
+        model.addAttribute("smlouvy", smlouvaRepository.findAll());
+        return "smlouvy";
     }
 }
+
+
