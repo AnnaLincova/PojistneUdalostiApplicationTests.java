@@ -1,6 +1,5 @@
 package alincova.springframework.pojistneudalosti.controllers;
 
-import alincova.springframework.pojistneudalosti.Pojisteni.Pojistenec;
 import alincova.springframework.pojistneudalosti.Pojisteni.Smlouva;
 import alincova.springframework.pojistneudalosti.repositories.PojistenecRepository;
 import alincova.springframework.pojistneudalosti.repositories.SmlouvaRepository;

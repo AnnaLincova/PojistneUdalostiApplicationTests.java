@@ -60,7 +60,6 @@ public class Pojistenec {
         this.age = age;
     }
 
-
     public String getSmlouvyTypes() {
         StringBuilder sb = new StringBuilder();
         smlouvy.forEach(smlouva ->
