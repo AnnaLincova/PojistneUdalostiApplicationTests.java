@@ -14,6 +14,7 @@
         <th>Typ pojištění</th>
     </tr>
     <tbody>
+    <!--/*@thymesVar id="smlouvy" type=""*/-->
     <tr th:each="smlouva : ${smlouvy}">
         <td th:text="${smlouva.id}">5</td>
         <td th:text="${smlouva.dateOfConclusion}">5</td>
@@ -25,7 +26,7 @@
 <br/><br/>
 <a href="/">
     <button>
-        Vrátit se na rozcestník
+        Zpět
     </button>
 </a>
 

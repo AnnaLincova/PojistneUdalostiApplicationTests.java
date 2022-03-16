@@ -11,6 +11,7 @@
     <input id="dateOfConclusion" min="2022-01-01" name="dateOfConclusion" size="22" type="date"><br/>
     <label for="dateOfExpiration">Zadejte datum ukončení smlouvy:</label><br/>
     <input id="dateOfExpiration" min="2022-01-01" name="dateOfExpiration" size="22" type="date"><br/>
+    <br/>
 
     <!--/*@thymesVar id="smlouvy" type="alincova"*/-->
     <select name="pojisteni" th:each="smlouva : ${smlouvy}">
@@ -25,7 +26,7 @@
 <br/>
 <a href="/">
     <button>
-        Vrátit se na rozcestník
+        Zpět
     </button>
 </a>
 </body>
