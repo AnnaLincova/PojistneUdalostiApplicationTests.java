@@ -9,11 +9,10 @@
 <table>
     <tr>
         <th>ID</th>
-        <th>Datum uzávření smlouvy</th>
-        <th>Datum ukončení smlouvy</th>
-        <th>Pojištění</th>
+        <th>Datum uzávření</th>
+        <th>Datum ukončení</th>
+        <th>Typ pojištění</th>
     </tr>
-
     <tbody>
     <tr th:each="smlouva : ${smlouvy}">
         <td th:text="${smlouva.id}">5</td>
@@ -21,13 +20,14 @@
         <td th:text="${smlouva.dateOfExpiration}">5</td>
         <td th:text="${smlouva.type}">5</td>
     </tr>
-    <br/><br/>
-    <a href="/">
-        <button>
-            Vrátit se na rozcestník
-        </button>
-    </a>
     </tbody>
 </table>
+<br/><br/>
+<a href="/">
+    <button>
+        Vrátit se na rozcestník
+    </button>
+</a>
+
 </body>
 </html>
