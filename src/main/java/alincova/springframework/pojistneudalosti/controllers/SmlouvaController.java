@@ -6,12 +6,12 @@ import alincova.springframework.pojistneudalosti.repositories.SmlouvaRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class SmlouvaController {
     private final SmlouvaRepository smlouvaRepository;
-
     private final PojistenecRepository pojistenecRepository;
 
     public SmlouvaController(SmlouvaRepository smlouvaRepository, PojistenecRepository pojistenecRepository) {
@@ -30,9 +30,8 @@ public class SmlouvaController {
     //return "pojistenci";}
 
     @GetMapping("/smlouvy")
-    public String getSmlouva(Model model) {
+    public void getSmlouva(Model model) {
         model.addAttribute("smlouvy", smlouvaRepository.findAll());
-        return "smlouvy";
     }
 }
 
